@@ -26,18 +26,31 @@ A RESTful API built using Spring Boot to manage expenses. This application allow
 
 ## Project Structure
 
+```text
 src/
 ├── main/
-│   └── java/com/diligent/smartexpensetrackerapi/
-│       ├── controller/
-│       ├── model/
-│       ├── service/
-│       └── SmartExpenseTrackerApiApplication.java
+│   └── java/
+│       └── com/
+│           └── diligent/
+│               └── smartexpensetrackerapi/
+│                   ├── controller/
+│                   │   └── ExpenseController.java
+│                   ├── model/
+│                   │   └── Expense.java
+│                   ├── service/
+│                   │   ├── ExpenseService.java
+│                   │   └── ExpenseServiceImpl.java
+│                   └── SmartExpenseTrackerApiApplication.java
+│
 └── test/
-    └── java/com/diligent/smartexpensetrackerapi/tests/
-        ├── ExpenseControllerTest.java
-        └── SmartExpenseTrackerApiApplicationTests.java
----
+    └── java/
+        └── com/
+            └── diligent/
+                └── smartexpensetrackerapi/
+                    └── tests/
+                        ├── ExpenseControllerTest.java
+                        └── SmartExpenseTrackerApiApplicationTests.java
+```
 
 ## API Endpoints
 
