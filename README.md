@@ -2,7 +2,9 @@
 
 A RESTful API built using Spring Boot to manage expenses. This application allows users to add expenses, view all expenses, filter expenses by category, calculate total expenses, and delete expenses.
 
-## Tech Stack
+---
+
+# Tech Stack
 
 - Java 21
 - Spring Boot
@@ -11,7 +13,9 @@ A RESTful API built using Spring Boot to manage expenses. This application allow
 - JUnit 5
 - MockMvc
 
-## Features
+---
+
+# Features
 
 - Add a new expense
 - View all expenses
@@ -24,7 +28,7 @@ A RESTful API built using Spring Boot to manage expenses. This application allow
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```text
 src/
@@ -52,9 +56,65 @@ src/
                         └── SmartExpenseTrackerApiApplicationTests.java
 ```
 
-## API Endpoints
+---
 
-### 1. Add Expense
+# Installation
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+Move to the project directory:
+
+```bash
+cd smart-expense-tracker-api
+```
+
+Install the dependencies:
+
+```bash
+mvnw.cmd clean install
+```
+
+---
+
+# Running the Application
+
+Run the Spring Boot application:
+
+```bash
+mvnw.cmd spring-boot:run
+```
+
+The server will start at:
+
+```text
+http://localhost:8080
+```
+
+---
+
+# Running Tests
+
+Run all test cases:
+
+```bash
+mvnw.cmd test
+```
+
+Expected output:
+
+```text
+BUILD SUCCESS
+```
+
+---
+
+# API Endpoints
+
+## 1. Add Expense
 
 **POST**
 
@@ -88,7 +148,7 @@ Response:
 
 ---
 
-### 2. Get All Expenses
+## 2. Get All Expenses
 
 **GET**
 
@@ -98,7 +158,7 @@ Response:
 
 ---
 
-### 3. Get Expenses by Category
+## 3. Get Expenses by Category
 
 **GET**
 
@@ -108,7 +168,7 @@ Response:
 
 ---
 
-### 4. Get Total Expenses
+## 4. Get Total Expenses
 
 **GET**
 
@@ -124,7 +184,7 @@ Example response:
 
 ---
 
-### 5. Get Total Expenses by Category
+## 5. Get Total Expenses by Category
 
 **GET**
 
@@ -140,7 +200,7 @@ Example response:
 
 ---
 
-### 6. Delete Expense
+## 6. Delete Expense
 
 **DELETE**
 
@@ -156,43 +216,7 @@ Expense deleted successfully
 
 ---
 
-## Running the Project
-
-Clone the repository:
-
-```bash
-git clone <repository-url>
-```
-
-Go to the project directory:
-
-```bash
-cd smart-expense-tracker-api
-```
-
-Run the application:
-
-```bash
-./mvnw spring-boot:run
-```
-
-For Windows:
-
-```bash
-mvnw.cmd spring-boot:run
-```
-
----
-
-## Running Tests
-
-```bash
-mvnw.cmd test
-```
-
----
-
-## Swagger Documentation
+# Swagger Documentation
 
 Swagger UI:
 
@@ -202,7 +226,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
-## Testing
+# Testing
 
 The application is tested using:
 
@@ -213,8 +237,9 @@ The application is tested using:
 
 ---
 
-## Notes
+# Additional Information
 
-- Data is stored in memory using Java collections.
-- No database is used.
-- Validation is implemented using Jakarta Validation.
+- Expenses are stored in memory using Java collections.
+- No external database is used.
+- Input validation is implemented using Jakarta Validation.
+- API documentation is available through Swagger UI.
