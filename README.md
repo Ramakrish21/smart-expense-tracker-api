@@ -1,6 +1,6 @@
 # Smart Expense Tracker API
 
-A RESTful API built using Spring Boot to manage expenses. This application allows users to add expenses, view all expenses, filter expenses by category, calculate total expenses, and delete expenses.
+A RESTful API built using Spring Boot to manage expenses. This application allows users to add expenses, view all expenses, filter expenses by category, search expenses by title, calculate total expenses, generate monthly summaries, and delete expenses.
 
 ---
 
@@ -20,8 +20,10 @@ A RESTful API built using Spring Boot to manage expenses. This application allow
 - Add a new expense
 - View all expenses
 - Filter expenses by category
+- Search expenses by title
 - Calculate total expenses
 - Calculate total expenses by category
+- Calculate monthly expense summary
 - Delete an expense
 - API documentation using Swagger
 - Unit testing
@@ -168,7 +170,47 @@ Response:
 
 ---
 
-## 4. Get Total Expenses
+## 4. Search Expenses by Title
+
+**GET**
+
+```text
+/expenses/search?keyword=Lunch
+```
+
+Example response:
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Lunch",
+    "amount": 250,
+    "category": "Food",
+    "date": "2026-07-31"
+  }
+]
+```
+
+---
+
+## 5. Get Monthly Expense Summary
+
+**GET**
+
+```text
+/expenses/monthly-summary?month=7&year=2026
+```
+
+Example response:
+
+```text
+750.0
+```
+
+---
+
+## 6. Get Total Expenses
 
 **GET**
 
@@ -184,7 +226,7 @@ Example response:
 
 ---
 
-## 5. Get Total Expenses by Category
+## 7. Get Total Expenses by Category
 
 **GET**
 
@@ -200,7 +242,7 @@ Example response:
 
 ---
 
-## 6. Delete Expense
+## 8. Delete Expense
 
 **DELETE**
 
@@ -242,4 +284,6 @@ The application is tested using:
 - Expenses are stored in memory using Java collections.
 - No external database is used.
 - Input validation is implemented using Jakarta Validation.
+- Expenses can be searched by title.
+- Monthly expense summaries can be generated using month and year.
 - API documentation is available through Swagger UI.
