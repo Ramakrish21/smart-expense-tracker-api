@@ -1,6 +1,5 @@
 package com.diligent.smartexpensetrackerapi.service;
 
-
 import java.util.List;
 
 import com.diligent.smartexpensetrackerapi.model.Expense;
@@ -18,5 +17,9 @@ public interface ExpenseService {
     double getTotalExpensesByCategory(String category);
 
     boolean deleteExpense(Long id);
-    
+
+    List<Expense> searchExpenses(String keyword);
+
+    double getMonthlySummary(int month, int year);
+
 }

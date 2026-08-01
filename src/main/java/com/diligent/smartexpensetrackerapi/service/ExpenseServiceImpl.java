@@ -66,5 +66,40 @@ public class ExpenseServiceImpl implements ExpenseService {
     @Override
     public boolean deleteExpense(Long id) {
         return expenses.removeIf(expense -> expense.getId().equals(id));
-}
+    }
+
+    @Override
+    public List<Expense> searchExpenses(String keyword) {
+
+        List<Expense> result = new ArrayList<>();
+
+        for (Expense expense : expenses) {
+
+            if (expense.getTitle()
+                    .toLowerCase()
+                    .contains(keyword.toLowerCase())) {
+
+                result.add(expense);
+            }
+        }
+
+        return result;
+    }
+
+    @Override
+    public double getMonthlySummary(int month, int year) {
+
+        double total = 0;
+
+        for (Expense expense : expenses) {
+
+            if (expense.getDate().getMonthValue() == month
+                    && expense.getDate().getYear() == year) {
+
+                total += expense.getAmount();
+            }
+        }
+
+        return total;
+    }
 }

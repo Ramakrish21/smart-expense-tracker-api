@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.diligent.smartexpensetrackerapi.model.Expense;
 import com.diligent.smartexpensetrackerapi.service.ExpenseService;
 
-import jakarta.validation.Valid;
-
 import io.swagger.v3.oas.annotations.Operation;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/expenses")
@@ -39,7 +39,7 @@ public class ExpenseController {
         return expenseService.getAllExpenses();
     }
 
-    @Operation(summary = "Delete expense by ID")
+    @Operation(summary = "Get expenses by category")
     @GetMapping("/category/{category}")
     public List<Expense> getExpensesByCategory(
             @PathVariable String category) {
@@ -47,11 +47,21 @@ public class ExpenseController {
         return expenseService.getExpensesByCategory(category);
     }
 
+    @Operation(summary = "Search expenses by title")
+    @GetMapping("/search")
+    public List<Expense> searchExpenses(
+            @RequestParam String keyword) {
+
+        return expenseService.searchExpenses(keyword);
+    }
+
+    @Operation(summary = "Get total expenses")
     @GetMapping("/total")
     public double getTotalExpenses() {
         return expenseService.getTotalExpenses();
     }
 
+    @Operation(summary = "Get total expenses by category")
     @GetMapping("/total/{category}")
     public double getTotalExpensesByCategory(
             @PathVariable String category) {
@@ -59,6 +69,16 @@ public class ExpenseController {
         return expenseService.getTotalExpensesByCategory(category);
     }
 
+    @Operation(summary = "Get monthly expense summary")
+    @GetMapping("/monthly-summary")
+    public double getMonthlySummary(
+            @RequestParam int month,
+            @RequestParam int year) {
+
+        return expenseService.getMonthlySummary(month, year);
+    }
+
+    @Operation(summary = "Delete expense by ID")
     @DeleteMapping("/{id}")
     public String deleteExpense(@PathVariable Long id) {
 

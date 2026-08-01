@@ -78,6 +78,37 @@ public class ExpenseControllerTest {
     }
 
     @Test
+    void testSearchExpenses() throws Exception {
+
+        Expense expense = new Expense(
+                1L,
+                "Lunch",
+                250,
+                "Food",
+                LocalDate.now()
+        );
+
+        when(expenseService.searchExpenses("Lunch"))
+                .thenReturn(Arrays.asList(expense));
+
+        mockMvc.perform(get("/expenses/search")
+                        .param("keyword", "Lunch"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    void testMonthlySummary() throws Exception {
+
+        when(expenseService.getMonthlySummary(7, 2026))
+                .thenReturn(750.0);
+
+        mockMvc.perform(get("/expenses/monthly-summary")
+                        .param("month", "7")
+                        .param("year", "2026"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
     void testDeleteExpense() throws Exception {
 
         doReturn(true)
