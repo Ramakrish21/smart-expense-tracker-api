@@ -6,7 +6,7 @@
 
 ---
 
-# 1. Which parts were AI-generated and which parts were written by me
+# 1. AI-assisted and self-implemented components
 
 ## AI-assisted components
 
@@ -22,7 +22,7 @@
 
 - Spring Boot project setup and configuration
 - Expense model creation (`Expense.java`)
-- Controller implementation and endpoint mappings
+- Final implementation of controllers and API endpoint mappings
 - Service-layer business logic
 - Validation annotations and request handling
 - Folder structure organization
@@ -37,7 +37,7 @@
 - Fixed request-body issues in Swagger.
 - Modified the delete API to return meaningful responses when an expense ID does not exist.
 - Corrected compilation and dependency issues in Maven.
-- Updated the project structure to satisfy the assignment requirements.
+- Reviewed all generated code and adapted it to the project's needs.
 - Reviewed all generated code and adapted it to the project's needs.
 - Tested add, get, filter, total, and delete operations manually.
 - Ensured that the implementation uses in-memory storage instead of a database.
@@ -66,6 +66,6 @@ Not implemented because the assignment only required basic filtering.
 
 # Development Approach
 
-I used ChatGPT to understand concepts, generate boilerplate code, and review parts of the implementation. All AI-generated code was manually reviewed, tested, and modified before being included in the final project.
+I used ChatGPT as a development assistant for understanding concepts, generating boilerplate code, and reviewing implementation ideas. All AI-generated code was manually reviewed, tested, and modified before being included in the final project.
 
 The final implementation was validated using Swagger UI, Postman, and unit tests.
