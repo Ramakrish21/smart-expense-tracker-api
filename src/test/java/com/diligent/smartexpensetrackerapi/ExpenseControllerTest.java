@@ -1,4 +1,4 @@
-package com.diligent.smartexpensetrackerapi.tests;
+package com.diligent.smartexpensetrackerapi;
 
 import com.diligent.smartexpensetrackerapi.controller.ExpenseController;
 import com.diligent.smartexpensetrackerapi.model.Expense;
