@@ -13,6 +13,8 @@
 - Initial REST API structure and endpoint suggestions
 - ExpenseService interface design
 - ExpenseService implementation examples
+- Search expense endpoint suggestions
+- Monthly expense summary endpoint suggestions
 - Unit test examples using JUnit and MockMvc
 - Swagger/OpenAPI integration
 - README template and documentation suggestions
@@ -24,6 +26,8 @@
 - Expense model creation (`Expense.java`)
 - Final implementation of controllers and API endpoint mappings
 - Service-layer business logic
+- Search functionality implementation
+- Monthly summary functionality implementation
 - Validation annotations and request handling
 - Folder structure organization
 - API testing and debugging
@@ -36,10 +40,11 @@
 - Verified all APIs using Swagger UI and Postman.
 - Fixed request-body issues in Swagger.
 - Modified the delete API to return meaningful responses when an expense ID does not exist.
+- Added and tested the search expenses endpoint.
+- Added and tested the monthly expense summary endpoint.
 - Corrected compilation and dependency issues in Maven.
 - Reviewed all generated code and adapted it to the project's needs.
-- Reviewed all generated code and adapted it to the project's needs.
-- Tested add, get, filter, total, and delete operations manually.
+- Tested add, get, filter, search, total, monthly summary, and delete operations manually.
 - Ensured that the implementation uses in-memory storage instead of a database.
 
 ---
